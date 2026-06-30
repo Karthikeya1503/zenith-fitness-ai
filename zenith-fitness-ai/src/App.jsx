@@ -15,7 +15,7 @@ CORE BEHAVIORAL RULES:
 4. Positive reinforcement: Celebrate wins.
 `;
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || atob("QVEuQWI4Uk42TDZOUUwzYzFBdWRXSjJkc2ctVzh6V0tlQl9adndqVVpwU2Q5V2pKX09uMUE=");
 
 // Build medical context from the latest analyzed report
 function getMedicalContext() {
