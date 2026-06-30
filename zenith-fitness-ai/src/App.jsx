@@ -15,7 +15,7 @@ CORE BEHAVIORAL RULES:
 4. Positive reinforcement: Celebrate wins.
 `;
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyCxRf_TKyipQVwL22VLH6DW0vebcvm0e7w";
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 // Build medical context from the latest analyzed report
 function getMedicalContext() {
@@ -144,7 +144,7 @@ export default function App() {
         parts: [{ text: m.content }]
       }));
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
